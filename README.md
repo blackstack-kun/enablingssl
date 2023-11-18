@@ -1,4 +1,4 @@
-# enablingssl
+# Enabling SSL & Reverse Proxying
 Enabling SSL & reverse proxying with Apache in Ubuntu 
 Server Firewall setup
 	firewall-cmd --permanent --zone=public --add-port=25565/tcp
