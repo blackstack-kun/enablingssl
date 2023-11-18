@@ -14,9 +14,10 @@ Reverse proxy (assuming you have Apache,certbot,mariaDB,php)
  
 ->if error ( Unable to find a virtual host listening on port 80)
 	cd /etc/apache2/sites-available
- 
+ ```
 	vim yourDomainName.conf
-	
+```
+```	
 	<VirtualHost *:80>
    		 ServerName yourDomainName.com
    		 DocumentRoot /var/www/html
@@ -24,7 +25,7 @@ Reverse proxy (assuming you have Apache,certbot,mariaDB,php)
    		 ErrorLog /var/www/error.log
    		 CustomLog /var/www/requests.log combined
 	</VirtualHost>
-
+```
 	then restart the apache2 service (service apache2 restart)
 		a2ensite yourDomainName
 		service apache2 restart
