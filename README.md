@@ -9,7 +9,7 @@ Extra Information Before you proceed :
 ```
 -> Replace every 'DOMAIN' with your own domain
 
-
+->This is made for Ubuntu Environment
 
 Reverse proxy (assuming you have Apache,certbot,mariaDB,php)
 
