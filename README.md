@@ -39,8 +39,8 @@ Reverse proxy (assuming you have Apache,certbot,mariaDB,php)
    		 CustomLog /var/www/requests.log combined
 	</VirtualHost>
 ```
-	then restart the apache2 service (service apache2 restart)
- ```
+->then restart the apache2 service (service apache2 restart)
+```
 		a2ensite yourDomainName
 ```
 ```
