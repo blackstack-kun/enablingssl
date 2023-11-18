@@ -27,7 +27,7 @@ Reverse proxy (assuming you have Apache,certbot,mariaDB,php)
 ```
 	cd /etc/apache2/sites-available
 ```
- ```
+```
 	vim yourDomainName.conf
 ```
 ```	
@@ -50,7 +50,7 @@ Reverse proxy (assuming you have Apache,certbot,mariaDB,php)
 		ctrl-d to exit root
 ```
 
-->now create a apache conf
+->now create a apache conf (keep in mind to Change the PORT to the port where you want to pass, & change DOMAIN in the certificate directory)
 ```
 	nano /etc/apache2/sites-enabled/0-pp.conf
 ```
@@ -59,13 +59,13 @@ Reverse proxy (assuming you have Apache,certbot,mariaDB,php)
     		ServerName DOMAIN
 
     		ProxyPreserveHost On
-    		ProxyPass / http://127.0.0.1:8080/
-    		ProxyPassReverse / http://127.0.0.1:8080/
+    		ProxyPass / http://127.0.0.1:PORT/
+    		ProxyPassReverse / http://127.0.0.1:PORT/
 
     		RewriteEngine on
     		RewriteCond %{HTTP:Upgrade} websocket [NC]
     		RewriteCond %{HTTP:Connection} upgrade [NC]
-    		RewriteRule .* ws://127.0.0.1:8080%{REQUEST_URI} [P]
+    		RewriteRule .* ws://127.0.0.1:PORT%{REQUEST_URI} [P]
 
     		ErrorLog ${APACHE_LOG_DIR}/pp.error.log
 
@@ -73,4 +73,4 @@ Reverse proxy (assuming you have Apache,certbot,mariaDB,php)
     		SSLCertificateKeyFile /etc/letsencrypt/live/DOMAIN/privkey.pem
 	</VirtualHost>
 ```
-->Yes you are done
+->you are done :)
