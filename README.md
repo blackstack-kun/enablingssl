@@ -23,7 +23,7 @@ Reverse proxy (assuming you have Apache,certbot,mariaDB,php)
 	sudo apt install -y certbot python3-certbot-apache
 ```
  
-->if error ( Unable to find a virtual host listening on port 80)
+->if error ( Unable to find a virtual host listening on port 80 OR an error like this site doesn't exist)
 ```
 	cd /etc/apache2/sites-available
 ```
